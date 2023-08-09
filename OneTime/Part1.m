@@ -39,6 +39,29 @@
         CGSize size;
     };
     typedef struct CGRect CGRect;
+
+    // EOCPerson.h
+    #import <Foundation/Foundation.h>
+    @interface EOCPerson: NSObject
+    @property (nonatomic, copy) NSString *firstName;
+    @property (nonatomic, copy) NSString *lastName;
+    @end
+    
+    // EOCPerson.m
+    #import "EOCPerson.h"
+    @implementation EOCPerson
+    // Implementation of methods
+    @end
+
+    // EOCPerson.h
+    #import <Foundation/Foundation.h>
+    @interface EOCPerson: NSObject
+    @property (nonatomic, copy) NSString *firstName;
+    @property (nonatomic, copy) NSString *lastName;
+    @property (nonatomic, strong) EOCEmployer *employer;
+    @end
+
+    
 }
 
 
