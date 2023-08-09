@@ -15,59 +15,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // ------分---割---线------
+        
+    // Messageing (Objective-C)
+    Object *obj = [Object new];
+    [obj performWith: parameter1 and: parameter2];
     
-    ^{
-        // Block implementation here
+    // Function calling (C++)
+    Object *obj = new Object;
+    obj->perform(parameter1, parameter2);
+
+    NSString *someString = @"The Strting";
+    NSString *anotherString = someString;
+
+    CGRect frame;
+    frame.origin.x = 0.0f;
+    frame.origin.y = 10.0f;
+    frame.size.width = 100.0f;
+    frame.size.height = 150.0f;
+
+    struct CGRect {
+        CGPoint origin;
+        CGSize size;
     };
-    
-    void (^someBlock)(void) = ^{
-        // Block implementation here
-        NSLog(@"一个平平无奇的午餐无返回值Block");
-    };
-    someBlock();
-    
-    NSLog(@"----------分-----割-----线----------");
-    
-    int (^addBlock)(int a, int b) = ^(int a, int b){
-        return a + b;
-    };
-    
-    int add = addBlock(2, 5);
-    NSLog(@"%d", add);
-    
-    NSLog(@"----------分-----割-----线----------");
-    
-    int additional = 5;
-    int (^addBlockOne)(int a, int b) = ^(int a, int b) {
-        return a + b + additional;
-    };
-    int addOne = addBlockOne(2, 5);
-    NSLog(@"%d", addOne);
-    
-    NSLog(@"----------分-----割-----线----------");
-    
-    NSArray *array = @[@0, @1, @2, @3, @4, @5];
-    __block NSInteger count = 0;
-    [array enumerateObjectsUsingBlock:^(NSNumber*  _Nonnull number, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([number compare:@2] == NSOrderedAscending) {
-            count++;
-        }
-    }];
-    NSLog(@"%ld", (long)count);
-    
-    NSLog(@"----------分-----割-----线----------");
-    
-    void (^block) ();
-    if (/* some condition */) {
-        block = [^ {
-            NSLog(@"Block A");
-        } copy];
-    } else {
-        block = [^ {
-            NSLog(@"Block B");
-        } copy];
-    }
-    block();
+    typedef struct CGRect CGRect;
 }
 
 
